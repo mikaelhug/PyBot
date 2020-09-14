@@ -1,4 +1,5 @@
 # pip3 install pyautogui opencv-python
+# Ubuntu: sudo apt install scrot python3-tk python3-dev
 
 import time
 import pyautogui as py
@@ -9,7 +10,7 @@ from os import listdir
 # Vars
 client = 'medivia/'
 delay = 0.5
-runeloop = 8
+runeloop = 5
 mx = 0
 my = 0
 # spell = "encurso magni" # HMM
@@ -61,8 +62,9 @@ def checkmana():
         mana90 = py.screenshot(region=(mx+110, my+32, 35, 15))
         colors = mana90.getcolors()
         for color in colors:
-            if color[1] == (114, 96, 255, 255):
+            if (color[1] == (114, 96, 255, 255)) or (color[1] == (114, 96, 255)):
                 return True
+        print("No mana.")
         return False
 
 def eatfood():
