@@ -43,8 +43,9 @@ def makerune():
             time.sleep(delay)
             py.press('enter')
             time.sleep(delay)
-            py.dragTo(rune_x, rune_y, button='left')
-            time.sleep(delay)
+            for _ in range(0,2):
+                py.dragTo(rune_x, rune_y, button='left')
+                time.sleep(delay)
 
         elif findimage('handL'):
             py.dragTo(mx, my, button='left')
@@ -53,8 +54,9 @@ def makerune():
             time.sleep(delay)
             py.press('enter')
             time.sleep(delay)
-            py.dragTo(rune_x, rune_y, button='left')
-            time.sleep(delay)
+            for _ in range(0,2):
+                py.dragTo(rune_x, rune_y, button='left')
+                time.sleep(delay)
 
 def checkmana():
     if findimage('health'):
