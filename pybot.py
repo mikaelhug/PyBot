@@ -42,7 +42,7 @@ def makerune():
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
-            time.sleep(delay)
+            time.sleep(delay+1)
             py.dragTo(rune_x, rune_y, button='left')
             time.sleep(delay)
 
@@ -52,7 +52,7 @@ def makerune():
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
-            time.sleep(delay)
+            time.sleep(delay+1)
             for _ in range(0,2): # pull back twice on backup hand
                 py.dragTo(rune_x, rune_y, button='left')
                 time.sleep(delay)
