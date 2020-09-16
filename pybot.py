@@ -13,9 +13,9 @@ delay = 0.5
 runeloop = 3
 mx = 0
 my = 0
-#spell = "encurso magni" # HMM
+spell = "encurso magni" # HMM
 #spell = "encurso magni ignis" # GFB
-spell = "encuro vita" # UH
+#spell = "encuro vita" # UH
 
 
 py.FAILSAFE = False
