@@ -37,24 +37,24 @@ def makerune():
         py.click(x=rune_x, y=rune_y)
         time.sleep(delay)
         if findimage('handR'):
-            py.dragTo(mx, my, 1, button='left')
+            py.dragTo(mx, my, delay, button='left')
             time.sleep(delay)
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
             time.sleep(delay+0.5)
-            py.dragTo(rune_x, rune_y, 1, button='left')
+            py.dragTo(rune_x, rune_y, delay, button='left')
             time.sleep(delay)
 
         elif findimage('handL'):
-            py.dragTo(mx, my, 1, button='left')
+            py.dragTo(mx, my, delay, button='left')
             time.sleep(delay)
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
             time.sleep(delay+0.5)
             for _ in range(0,2): # pull back twice
-                py.dragTo(rune_x, rune_y, 1, button='left')
+                py.dragTo(rune_x, rune_y, delay, button='left')
                 time.sleep(delay)
 
 def checkmana():
