@@ -9,7 +9,7 @@ from os import listdir
 
 # Vars
 client = 'medivia/'
-delay = 1
+delay = 0.5
 runeloop = 3
 mx = 0
 my = 0
@@ -42,9 +42,10 @@ def makerune():
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
-            time.sleep(delay+1)
-            py.dragTo(rune_x, rune_y, button='left')
             time.sleep(delay)
+            for _ in range(0,2): # pull back twice
+                py.dragTo(rune_x, rune_y, button='left')
+                time.sleep(delay)
 
         elif findimage('handL'):
             py.dragTo(mx, my, button='left')
@@ -52,8 +53,8 @@ def makerune():
             py.write(spell, interval=0.01)
             time.sleep(delay)
             py.press('enter')
-            time.sleep(delay+1)
-            for _ in range(0,2): # pull back twice on backup hand
+            time.sleep(delay)
+            for _ in range(0,3): # pull back thrice
                 py.dragTo(rune_x, rune_y, button='left')
                 time.sleep(delay)
 
