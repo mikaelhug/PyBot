@@ -29,7 +29,6 @@ def findimage(image):
         print("Found: " + image)
         return True
     except:
-        print("Not found: " + image)
         return False
 
 def makerune():
@@ -99,4 +98,4 @@ while True:
     except:
         print("error")
 
-    time.sleep(20+randrange(300))
+    time.sleep(20+randrange(240))
