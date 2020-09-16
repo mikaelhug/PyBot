@@ -1,5 +1,5 @@
 # pip3 install pyautogui opencv-python
-# Ubuntu: sudo apt install scrot python3-tk python3-dev
+# Ubuntu: sudo apt install scrot python3-tk python3-dev python3-pip
 
 import time
 import pyautogui as py
