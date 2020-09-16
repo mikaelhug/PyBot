@@ -9,12 +9,12 @@ from os import listdir
 
 # Vars
 client = 'medivia/'
-delay = 0.5
-runeloop = 5
+delay = 1
+runeloop = 3
 mx = 0
 my = 0
-# spell = "encurso magni" # HMM
-# spell = "encurso magni ignis" # GFB
+#spell = "encurso magni" # HMM
+#spell = "encurso magni ignis" # GFB
 spell = "encuro vita" # UH
 
 
@@ -83,9 +83,20 @@ def eatfood():
     if had_food == 0:
         print("need to find food")
 
-print("Your script is running...\n")
+def killdwarf():
+    if findimage('dwarf_attack'):
+        time.sleep(5)
+    elif findimage('dwarf_attack2'):
+        time.sleep(5)
+    elif findimage('dwarf2'):
+        py.click(x=mx+30, y=(my+5))
+        time.sleep(2)
+    elif findimage('dwarf'):
+        py.click(x=mx+30, y=(my+5))
+        time.sleep(2)
 
 # Main loop
+print("Your script is running...\n")
 while True:
     try:
         if checkmana():
