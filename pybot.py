@@ -84,8 +84,10 @@ def eatfood():
         print("need to find food")
 
 def killdwarf():
+    mark=1
     if findimage('dwarf_attack'):
         time.sleep(5)
+        eatfood()
     elif findimage('dwarf_attack2'):
         time.sleep(5)
     elif findimage('dwarf2'):
@@ -94,6 +96,20 @@ def killdwarf():
     elif findimage('dwarf'):
         py.click(x=mx+30, y=(my+5))
         time.sleep(2)
+        py.write("incuro", interval=0.01)
+        time.sleep(delay)
+        py.press('enter')
+        time.sleep(delay)
+    else:
+        if mark == 6:
+            mark = 1
+        mark_str = "marks/" + str(mark)
+        if findimage(mark_str):
+            py.click(x=mx, y=my)
+            time.sleep(delay)
+            mark += 1
+            
+
 
 # Main loop
 print("Your script is running...\n")
