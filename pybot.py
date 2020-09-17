@@ -84,6 +84,7 @@ def eatfood():
         print("need to find food")
 
 def killdwarf():
+    print("Killing Dwarfs")
     mark=1
     while True:
         time.sleep(delay)
@@ -102,6 +103,7 @@ def killdwarf():
             time.sleep(delay)
             py.press('enter')
         else:
+            print("No dwarfs, walking")
             if mark == 6:
                 mark = 1
             mark_str = "marks/" + str(mark)
