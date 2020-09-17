@@ -109,7 +109,7 @@ def killdwarf():
             mark_str = "marks/" + str(mark)
             if findimage(mark_str):
                 py.click(x=mx, y=my)
-                time.sleep(delay)
+                time.sleep(10) # Allow for walking. Smarter way?
                 mark += 1
 
 
