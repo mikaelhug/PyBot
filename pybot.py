@@ -85,28 +85,30 @@ def eatfood():
 
 def killdwarf():
     mark=1
-    if findimage('dwarf_attack'):
-        time.sleep(2)
-        eatfood()
-    elif findimage('dwarf_attack2'):
-        time.sleep(2)
-    elif findimage('dwarf2'):
-        py.click(x=mx+30, y=(my+5))
+    while True:
         time.sleep(delay)
-    elif findimage('dwarf'):
-        py.click(x=mx+30, y=(my+5))
-        time.sleep(delay)
-        py.write("incuro", interval=0.01)
-        time.sleep(delay)
-        py.press('enter')
-    else:
-        if mark == 6:
-            mark = 1
-        mark_str = "marks/" + str(mark)
-        if findimage(mark_str):
-            py.click(x=mx, y=my)
+        if findimage('dwarf_attack'):
+            time.sleep(2)
+            eatfood()
+        elif findimage('dwarf_attack2'):
+            time.sleep(2)
+        elif findimage('dwarf2'):
+            py.click(x=mx+30, y=(my+5))
             time.sleep(delay)
-            mark += 1
+        elif findimage('dwarf'):
+            py.click(x=mx+30, y=(my+5))
+            time.sleep(delay)
+            py.write("incuro", interval=0.01)
+            time.sleep(delay)
+            py.press('enter')
+        else:
+            if mark == 6:
+                mark = 1
+            mark_str = "marks/" + str(mark)
+            if findimage(mark_str):
+                py.click(x=mx, y=my)
+                time.sleep(delay)
+                mark += 1
 
 
 # Main loop
