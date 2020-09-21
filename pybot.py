@@ -114,13 +114,22 @@ def killdwarf():
 
 def fish():
     print("Fishing ...\n")
-    base_x = 400; base_y = 500
-    length_x = 600; length_y = 230
+    base_x = 410; base_y = 510
+    length_x = 590; length_y = 220
     
     #water = py.screenshot(region=(base_x, base_y, length_x, length_y))
     #water.save('/home/botter/PyBot/water.png')
     if findimage("fishingrod"):
-    	print("ok")
+        for _ in range(0,50):
+            py.click(mx, my)
+            time.sleep(0.05)
+            py.click(mx, my, button='right')
+            time.sleep(0.1)
+            py.click(base_x+randrange(length_x), base_y+randrange(length_y))
+            time.sleep(0.5)
+    else:
+        print("No fishingrod")
+        time.sleep(10)
 
 # Main loop
 print("Your script is running...\n")
@@ -132,9 +141,9 @@ while True:
             eatfood()
 
         else:
-            eatfood()
             time.sleep(20+randrange(240)) # OR FISH
             # fish()
+            eatfood()
 
     except:
         print("error")
