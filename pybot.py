@@ -115,8 +115,8 @@ def killdwarf():
 
 def fish():
     print("Fishing ...\n")
-    base_x = 410; base_y = 510
-    length_x = 590; length_y = 220
+    base_x = 670; base_y = 785
+    length_x = 1100; length_y = 400
     
     #water = py.screenshot(region=(base_x, base_y, length_x, length_y))
     #water.save('/home/botter/PyBot/water.png')
