@@ -34,8 +34,14 @@ def findimage(image):
 def freehand():
     print("Removing object from right hand")
 
-    findimage('helmet')
-    py.moveTo(mx,my)
+    if findimage('helmet'):
+    	sx = mx+35
+    	sy = my+55
+    	
+    	py.click(sx, sy)
+    	time.sleep(1)
+    	py.dragTo(wx/2-100, hx/2, delay*3, button='left')
+    	time.sleep(delay)
 
 def makerune():
     if findimage('blankrune'):
@@ -127,21 +133,20 @@ def fish():
 
 # Main loop
 print("Your script is running...\n")
-freehand()
-# while True:
-#     try:
-#         if checkmana():
-#             if not findimage('handR'):
-#                 freehand()
+while True:
+    try:
+        if checkmana():
+            if not findimage('handR'):
+                freehand()
 
-#             for _ in range(0,runeloop):
-#                 makerune()
-#             eatfood()
+            for _ in range(0,runeloop):
+                makerune()
+            eatfood()
 
-#         else:
-#             time.sleep(20+randrange(240)) # OR FISH
-#             # fish()
-#             eatfood()
+        else:
+            time.sleep(20+randrange(240)) # OR FISH
+            # fish()
+            eatfood()
 
-#     except:
-#         print("error")
+    except:
+        print("error")
