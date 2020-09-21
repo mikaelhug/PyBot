@@ -115,8 +115,8 @@ def killdwarf():
 
 def fish():
     print("Fishing ...\n")
-    base_x = 670; base_y = 785
-    length_x = 1100; length_y = 400
+    base_x = 680; base_y = 785
+    length_x = 1090; length_y = 400
     
     #water = py.screenshot(region=(base_x, base_y, length_x, length_y))
     #water.save('/home/botter/PyBot/water.png')
@@ -127,7 +127,7 @@ def fish():
             py.click(mx, my, button='right')
             time.sleep(0.1)
             py.click(base_x+randrange(length_x), base_y+randrange(length_y))
-            time.sleep(0.5)
+            time.sleep(1)
     else:
         print("No fishingrod")
         time.sleep(10)
