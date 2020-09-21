@@ -112,6 +112,15 @@ def killdwarf():
                 time.sleep(10) # Allow for walking. Smarter way?
                 mark += 1
 
+def fish():
+    print("Fishing ...\n")
+    base_x = 400; base_y = 500
+    length_x = 600; length_y = 230
+    
+    #water = py.screenshot(region=(base_x, base_y, length_x, length_y))
+    #water.save('/home/botter/PyBot/water.png')
+    if findimage("fishingrod"):
+    	print("ok")
 
 # Main loop
 print("Your script is running...\n")
@@ -124,8 +133,8 @@ while True:
 
         else:
             eatfood()
+            time.sleep(20+randrange(240)) # OR FISH
+            # fish()
 
     except:
         print("error")
-
-    time.sleep(20+randrange(240))
