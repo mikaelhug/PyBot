@@ -31,31 +31,25 @@ def findimage(image):
     except:
         return False
 
+def freehand():
+    print("Removing object from right hand")
+
+    findimage('helmet')
+    py.moveTo(mx,my)
+
 def makerune():
     if findimage('blankrune'):
         rune_x, rune_y = mx, my
         py.click(x=rune_x, y=rune_y)
         time.sleep(delay)
-        if findimage('handR'):
-            py.dragTo(mx, my, delay, button='left')
-            time.sleep(delay)
-            py.write(spell, interval=0.01)
-            time.sleep(delay)
-            py.press('enter')
-            time.sleep(delay+0.5)
-            py.dragTo(rune_x, rune_y, delay, button='left')
-            time.sleep(delay)
-
-        elif findimage('handL'):
-            py.dragTo(mx, my, delay, button='left')
-            time.sleep(delay)
-            py.write(spell, interval=0.01)
-            time.sleep(delay)
-            py.press('enter')
-            time.sleep(delay+0.5)
-            for _ in range(0,2): # pull back twice
-                py.dragTo(rune_x, rune_y, delay, button='left')
-                time.sleep(delay)
+        py.dragTo(mx, my, delay, button='left')
+        time.sleep(delay)
+        py.write(spell, interval=0.01)
+        time.sleep(delay)
+        py.press('enter')
+        time.sleep(delay+0.5)
+        py.dragTo(rune_x, rune_y, delay, button='left')
+        time.sleep(delay)
 
 def checkmana():
     if findimage('health'):
@@ -133,17 +127,21 @@ def fish():
 
 # Main loop
 print("Your script is running...\n")
-while True:
-    try:
-        if checkmana():
-            for _ in range(0,runeloop):
-                makerune()
-            eatfood()
+freehand()
+# while True:
+#     try:
+#         if checkmana():
+#             if not findimage('handR'):
+#                 freehand()
 
-        else:
-            time.sleep(20+randrange(240)) # OR FISH
-            # fish()
-            eatfood()
+#             for _ in range(0,runeloop):
+#                 makerune()
+#             eatfood()
 
-    except:
-        print("error")
+#         else:
+#             time.sleep(20+randrange(240)) # OR FISH
+#             # fish()
+#             eatfood()
+
+#     except:
+#         print("error")
