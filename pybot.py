@@ -13,8 +13,9 @@ delay = 0.5
 runeloop = 3
 mx = 0
 my = 0
-spell = "encurso magni" # HMM
-#spell = "encurso magni ignis" # GFB
+wx, hx = py.size()
+#spell = "encurso magni" # HMM
+spell = "encurso magni ignis" # GFB
 #spell = "encuro vita" # UH
 
 
@@ -43,12 +44,12 @@ def freehand():
     	py.dragTo(wx/2-100, hx/2, delay*3, button='left')
     	time.sleep(delay)
 
-def makerune():
+def makerune(handx, handy):
     if findimage('blankrune'):
         rune_x, rune_y = mx, my
         py.click(x=rune_x, y=rune_y)
         time.sleep(delay)
-        py.dragTo(mx, my, delay, button='left')
+        py.dragTo(handx, handy, delay, button='left')
         time.sleep(delay)
         py.write(spell, interval=0.01)
         time.sleep(delay)
@@ -139,13 +140,15 @@ while True:
             if not findimage('handR'):
                 freehand()
 
+            findimage('handR')
+            handx, handy = mx, my
             for _ in range(0,runeloop):
-                makerune()
+                makerune(handx, handy)
             eatfood()
 
         else:
             time.sleep(20+randrange(240)) # OR FISH
-            # fish()
+            #fish()
             eatfood()
 
     except:
