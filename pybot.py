@@ -7,18 +7,19 @@ from PIL import Image
 from random import randrange
 from os import listdir
 
-# Vars
+# YOur setup
 client = 'medivia/'
 delay = 0.5
 runeloop = 3
-mx = 0
-my = 0
-wx, hx = py.size()
+fishing = False
 #spell = "encurso magni" # HMM
 spell = "encurso magni ignis" # GFB
 #spell = "encuro vita" # UH
 
-
+# Dont edit
+mx = 0
+my = 0
+wx, hx = py.size()
 py.FAILSAFE = False
 
 # Actuals Functions
@@ -147,8 +148,11 @@ while True:
             eatfood()
 
         else:
-            time.sleep(20+randrange(240)) # OR FISH
-            #fish()
+            if fishing:
+                fish()
+            else:
+                time.sleep(20+randrange(240)) # OR FISH
+                
             eatfood()
 
     except:
