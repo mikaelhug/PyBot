@@ -7,6 +7,11 @@ from PIL import Image
 from random import randrange
 from os import listdir
 
+# # TO ADD # #
+# - Logout if no blankrune (and maybe no food?)
+# - Battlelist detection
+# # # # # # # # 
+
 # Your setup
 client = 'medivia/'
 delay = 0.5
