@@ -7,7 +7,7 @@ from PIL import Image
 from random import randrange
 from os import listdir
 
-# YOur setup
+# Your setup
 client = 'medivia/'
 delay = 0.5
 runeloop = 3
@@ -15,6 +15,7 @@ fishing = False
 #spell = "encurso magni" # HMM
 spell = "encurso magni ignis" # GFB
 #spell = "encuro vita" # UH
+#spell = "encurso vita virtus" # SD
 
 # Dont edit
 mx = 0
