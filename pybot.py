@@ -15,12 +15,13 @@ from os import listdir
 # Your setup
 client = 'medivia/'
 delay = 0.5
-runeloop = 3
 fishing = False
-#spell = "encurso magni" # HMM
-spell = "encurso magni ignis" # GFB
-#spell = "encuro vita" # UH
-#spell = "encurso vita virtus" # SD
+### spell then runeloop int ###
+# spell = ["encurso magni", 4] # HMM
+spell = ["encurso magni ignis", 3] # GFB
+# spell = ["encuro vita", 3] # UH
+# spell = ["encurso vita virtus", 2] # SD
+# spell = ["encreo mas amplio", 2] # Explo
 
 # Dont edit
 mx = 0
@@ -58,7 +59,7 @@ def makerune(handx, handy):
         time.sleep(delay)
         py.dragTo(handx, handy, delay, button='left')
         time.sleep(delay)
-        py.write(spell, interval=0.01)
+        py.write(spell[0], interval=0.01)
         time.sleep(delay)
         py.press('enter')
         time.sleep(delay+0.5)
@@ -149,7 +150,7 @@ while True:
 
             findimage('handR')
             handx, handy = mx, my
-            for _ in range(0,runeloop):
+            for _ in range(0,spell[1]):
                 makerune(handx, handy)
             eatfood()
 
@@ -157,7 +158,7 @@ while True:
             if fishing:
                 fish()
             else:
-                time.sleep(20+randrange(240)) # OR FISH
+                time.sleep(20+randrange(180))
                 
             eatfood()
 
