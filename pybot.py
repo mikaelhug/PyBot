@@ -135,7 +135,7 @@ def fish():
             py.click(mx, my, button='right')
             time.sleep(0.1)
             py.click(base_x+randrange(length_x), base_y+randrange(length_y))
-            time.sleep(2)
+            time.sleep(randrange(3))
     else:
         print("No fishingrod")
         time.sleep(10)
