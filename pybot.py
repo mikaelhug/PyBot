@@ -16,6 +16,7 @@ from os import listdir
 client = 'medivia/'
 delay = 0.5
 fishing = False
+fishdelay = 3
 ### spell then runeloop int ###
 # spell = ["encurso magni", 4] # HMM
 spell = ["encurso magni ignis", 3] # GFB
@@ -135,7 +136,7 @@ def fish():
             py.click(mx, my, button='right')
             time.sleep(0.1)
             py.click(base_x+randrange(length_x), base_y+randrange(length_y))
-            time.sleep(randrange(3))
+            time.sleep(randrange(fishdelay))
     else:
         print("No fishingrod")
         time.sleep(10)
