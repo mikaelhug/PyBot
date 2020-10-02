@@ -19,11 +19,11 @@ fishing = False
 fishdelay = 3
 use_roh = False
 ### spell then runeloop int ###
-# spell = ["encurso magni", 4] # HMM
+#spell = ["encurso magni", 4] # HMM
 spell = ["encurso magni ignis", 3] # GFB
-# spell = ["encuro vita", 3] # UH
-# spell = ["encurso vita virtus", 2] # SD
-# spell = ["encreo mas amplio", 2] # Explo
+#spell = ["encuro vita", 3] # UH
+#spell = ["encurso vita virtus", 2] # SD
+#spell = ["encreo mas amplio", 2] # Explo
 
 # Dont edit
 mx = 0
