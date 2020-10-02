@@ -144,13 +144,18 @@ def fish():
 
 def check_roh():
     if findimage('helmet'):
-    	sx = mx+35
-    	sy = my+55
-    	
-    	py.click(sx, sy)
-    	time.sleep(1)
-    	py.dragTo(wx/2-100, hx/2, delay*3, button='left')
-    	time.sleep(delay)
+        rmx = mx-42+4 # ring middle x
+        rmy = my+88+4 # ring middle y
+
+    	ring = py.screenshot(region=(mx-42, my+88, 9, 9))
+        colors = ring.getcolors()
+
+        if len(colors) < 20: # no roh, put new on
+            if findimage('roh')
+                py.click(mx, my)
+                time.sleep(1)
+                py.dragTo(rmx, rmy, delay*3, button='left')
+                time.sleep(delay)
 
 
 # Main loop
