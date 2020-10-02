@@ -151,11 +151,14 @@ def check_roh():
         colors = ring.getcolors()
 
         if len(colors) < 20: # no roh, put new on
+            print("No ROH, putting one on if I can find one.")
             if findimage('roh'):
                 py.click(mx, my)
                 time.sleep(1)
                 py.dragTo(rmx, rmy, delay*3, button='left')
                 time.sleep(delay)
+        else:
+            print("Already using ROH.")
 
 
 # Main loop
