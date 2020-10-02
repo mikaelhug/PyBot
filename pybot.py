@@ -17,6 +17,7 @@ client = 'medivia/'
 delay = 0.5
 fishing = False
 fishdelay = 3
+use_roh = False
 ### spell then runeloop int ###
 # spell = ["encurso magni", 4] # HMM
 spell = ["encurso magni ignis", 3] # GFB
@@ -141,6 +142,17 @@ def fish():
         print("No fishingrod")
         time.sleep(10)
 
+def check_roh():
+    if findimage('helmet'):
+    	sx = mx+35
+    	sy = my+55
+    	
+    	py.click(sx, sy)
+    	time.sleep(1)
+    	py.dragTo(wx/2-100, hx/2, delay*3, button='left')
+    	time.sleep(delay)
+
+
 # Main loop
 print("Your script is running...\n")
 while True:
@@ -156,6 +168,9 @@ while True:
             eatfood()
 
         else:
+            if use_roh:
+                check_roh()
+
             if fishing:
                 fish()
             else:
