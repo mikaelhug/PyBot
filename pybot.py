@@ -147,7 +147,7 @@ def check_roh():
         rmx = mx-42+4 # ring middle x
         rmy = my+88+4 # ring middle y
 
-    	ring = py.screenshot(region=(mx-42, my+88, 9, 9))
+        ring = py.screenshot(region=(mx-42, my+88, 9, 9))
         colors = ring.getcolors()
 
         if len(colors) < 20: # no roh, put new on
