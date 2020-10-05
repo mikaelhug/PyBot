@@ -1,5 +1,5 @@
-# pip3 install pyautogui opencv-python
 # Ubuntu: sudo apt install scrot python3-tk python3-dev python3-pip
+# pip3 install pyautogui opencv-python
 
 import time
 import pyautogui as py
@@ -20,7 +20,7 @@ fishdelay = 3
 use_roh = False
 ### spell then runeloop int ###
 #spell = ["encurso magni", 4] # HMM
-spell = ["encurso magni ignis", 3] # GFB
+spell = ["encurso magni ignis", 10] # GFB
 #spell = ["encuro vita", 3] # UH
 #spell = ["encurso vita virtus", 2] # SD
 #spell = ["encreo mas amplio", 2] # Explo
@@ -163,8 +163,9 @@ def check_roh():
 
 # Main loop
 print("Your script is running...\n")
-while True:
-    try:
+
+try:
+    while True:
         if checkmana():
             if not findimage('handR'):
                 freehand()
@@ -186,5 +187,5 @@ while True:
                 
             eatfood()
 
-    except:
-        print("error")
+except KeyboardInterrupt:
+    print('Interrupted, exiting.')
