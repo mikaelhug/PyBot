@@ -14,7 +14,7 @@ def findimage(image):
 
 # Your setup
 client = 'medivia/'
-delay = 0.05
+delay = 0.02
 to_drink = 20 # How many mana fluid to drink
 
 # Dont edit
@@ -32,7 +32,7 @@ for _ in range(0, to_drink):
         py.moveTo(wx/2+35, hx/2-55, delay)
         time.sleep(delay/30)
         py.click(button='left')
-        time.sleep(delay*2)
+        time.sleep(delay*3)
 
     else:
         break
