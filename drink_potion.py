@@ -15,24 +15,29 @@ def findimage(image):
 # Your setup
 client = 'medivia/'
 delay = 0.02
-to_drink = 20 # How many mana fluid to drink
+to_drink = 60 # How many mana fluid to drink
 
 # Dont edit
 mx = 0
 my = 0
+i = 0
+lastmx = 0
 wx, hx = py.size()
 py.FAILSAFE = False
 
-for _ in range(0, to_drink):
+while i < to_drink:
     if findimage('manafluid'):
-        py.click(mx, my, button='left')
-        time.sleep(delay/30)
-        py.click(mx, my, button='right')
-        time.sleep(delay/30)
-        py.moveTo(wx/2+35, hx/2-55, delay)
-        time.sleep(delay/30)
-        py.click(button='left')
-        time.sleep(delay*3)
+        if lastmx != mx:
+            py.click(mx, my, button='left')
+            time.sleep(delay/30)
+            py.click(mx, my, button='right')
+            time.sleep(delay/30)
+            py.moveTo(wx/2+35, hx/2-55, delay)
+            time.sleep(delay/30)
+            py.click(button='left')
+            time.sleep(delay*3)
+            lastmx = mx
+            i += 1
 
     else:
         break
