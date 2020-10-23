@@ -1,5 +1,5 @@
 import requests,time
-from datetime import datetime
+from datetime import date
 
 def mediviahouses(city, status, beds):
     print("\nSearching for houses in "+city+".")
@@ -43,7 +43,7 @@ def mediviahouses(city, status, beds):
         rent = page.split('The monthly rent is <b>')[1].split('</b>')[0]
         beds = page.split('The house has <b>')[1].split('</b>')[0]
 
-        print(page)
+        # print(page)
 
         print(name)
         print(server)
@@ -52,7 +52,13 @@ def mediviahouses(city, status, beds):
         
         if status == "rented":
             last_pay = page.split('The rent has been paid until')[1].split(', ',1)[1].split('. <br>')[0]
+            last_pay = last_pay.rsplit(' ',2)[0]
+            last_pay = date.strptime(last_pay, '%b %d, %Y')
+            today = datetime.today().date()
+            if last_pay < today:
+                print("not payed rent")
             print(last_pay)
+            print(datetime.today().date())
 
         # page = page.split('</b>  door')[0]
         # nrbeds = page.split('</b>')[0]
