@@ -66,34 +66,9 @@ def mediviahouses(city, status, beds, size = 0):
                 
 
 
-mediviahouses("mittenhoff", "available", 4, 200)
-mediviahouses("eschen", "available", 4, 200)
-mediviahouses("arak", "available", 4, 200)
-mediviahouses("thoris", "available", 4, 200)
-mediviahouses("osaris", "available", 4, 200)
-mediviahouses("garrogat", "available", 4, 200)
-mediviahouses("abukir", "available", 4, 200)
-mediviahouses("icenhaal", "available", 4, 200)
-mediviahouses("yehsha", "available", 4, 200)
-
-
-# mediviahouses("mittenhoff", "rented", 4)
-# mediviahouses("eschen", "rented", 4)
-# mediviahouses("arak", "rented", 4)
-# mediviahouses("thoris", "rented", 4)
-# mediviahouses("osaris", "rented", 4)
-# mediviahouses("garrogat", "rented", 4)
-# mediviahouses("abukir", "rented", 4)
-# mediviahouses("icenhaal", "rented", 4)
-# mediviahouses("yehsha", "rented", 4)
-
-
-# mediviahouses("mittenhoff")
-# mediviahouses("eschen")
-# mediviahouses("arak")
-# mediviahouses("thoris")
-# mediviahouses("osaris")
-# mediviahouses("garrogat")
-# mediviahouses("abukir")
-# mediviahouses("icenhaal")
-# mediviahouses("yehsha")
+min_size = 150
+min_bed = 3
+status = "available"
+cities = ["mittenhoff", "eschen", "arak", "thoris", "osaris", "garrogat", "abukir", "icenhaal", "yehsha"]
+for city in cities:
+    mediviahouses("mittenhoff", status, min_bed, min_size)
