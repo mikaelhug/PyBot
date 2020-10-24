@@ -45,6 +45,7 @@ def mediviahouses(city, status, beds, size = 0):
         rent = page.split('The monthly rent is <b>')[1].split('</b>')[0]
         nrbeds = page.split('The house has <b>')[1].split('</b>')[0]
         
+        # print(page)
         if status == "rented":
             try:
                 last_pay = page.split('The rent has been paid until')[1].split(', ',1)[1].split('. <br>')[0]
@@ -59,16 +60,16 @@ def mediviahouses(city, status, beds, size = 0):
 
         if status == "available":
             if int(nrbeds) >= beds:
-                print("This house has "+nrbeds+" beds: "+hurl)
+                if int(hsize) >= size:
+                    print("This house has " + nrbeds + " beds and is " + hsize + " sqm: "+hurl)
 
-            if int(hsize) >= size:
-                print("This house is "+hsize+" sqm large: "+hurl)
+        time.sleep(0.2)
                 
 
-
-min_size = 150
+min_size = 110
 min_bed = 3
+# status = "rented"
 status = "available"
 cities = ["mittenhoff", "eschen", "arak", "thoris", "osaris", "garrogat", "abukir", "icenhaal", "yehsha"]
 for city in cities:
-    mediviahouses("mittenhoff", status, min_bed, min_size)
+    mediviahouses(city, status, min_bed, min_size)
