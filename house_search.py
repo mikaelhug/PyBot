@@ -2,9 +2,9 @@ import requests,time
 from datetime import datetime
 # import datetime
 
-def mediviahouses(city, status, beds, size = 0):
+def mediviahouses(city, status, beds, world, size = 0):
     print("\nSearching for houses in "+city+".")
-    url = "https://medivia.online/community/houses/legacy/%s/%s" % (city, status)
+    url = "https://medivia.online/community/houses/%s/%s/%s" % (world, city, status)
     
     page = requests.get(url, {'User-Agent': 'Mozilla/5.0'}).text
 
@@ -58,7 +58,7 @@ def mediviahouses(city, status, beds, size = 0):
                 if int(nrbeds) >= beds:
                     print(name+" has not payed rent since "+str(last_pay)+".\n"+hurl+"\nThis house has "+str(beds)+" or more beds and rent: "+rent+" gp.\n")
 
-        if status == "available":
+        if status == "available" or status == "all":
             if int(nrbeds) >= beds:
                 if int(hsize) >= size:
                     print("This house has " + nrbeds + " beds and is " + hsize + " sqm: "+hurl)
@@ -66,10 +66,14 @@ def mediviahouses(city, status, beds, size = 0):
         time.sleep(0.2)
                 
 
-min_size = 110
-min_bed = 3
+world = "legacy"
+min_size = 4
+min_bed = 4
+# status = "all"
 # status = "rented"
 status = "available"
 cities = ["mittenhoff", "eschen", "arak", "thoris", "osaris", "garrogat", "abukir", "icenhaal", "yehsha"]
+# cities = ["yehsha"]
+
 for city in cities:
-    mediviahouses(city, status, min_bed, min_size)
+    mediviahouses(city, status, min_bed, world, min_size)

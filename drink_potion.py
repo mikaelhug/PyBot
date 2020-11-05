@@ -22,12 +22,13 @@ mx = 0
 my = 0
 i = 0
 lastmx = 0
+lastmy = 0
 wx, hx = py.size()
 py.FAILSAFE = False
 
 while i < to_drink:
     if findimage('manafluid'):
-        if lastmx != mx:
+        if lastmx != mx or lastmy != my:
             py.click(mx, my, button='left')
             time.sleep(delay/30)
             py.click(mx, my, button='right')
@@ -37,6 +38,7 @@ while i < to_drink:
             py.click(button='left')
             time.sleep(delay*3)
             lastmx = mx
+            lastmy = my
             i += 1
 
     else:
