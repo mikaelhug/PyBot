@@ -20,6 +20,7 @@ fishdelay = 3
 use_roh = False
 ### spell then runeloop int ###
 #spell = ["encurso magni", 4] # HMM
+# spell = ["encurso ignis, 4"] # Fireball
 spell = ["encurso magni ignis", 4] # GFB
 #spell = ["encuro vita", 4] # UH
 #spell = ["encurso vita virtus", 2] # SD
@@ -52,6 +53,20 @@ def freehand():
     	py.click(sx, sy)
     	time.sleep(1)
     	py.dragTo(wx/2-100, hx/2, delay*3, button='left')
+    	time.sleep(delay)
+
+def pickup_spear():
+    print("Picking up spears")
+
+    if findimage('helmet'):
+    	sx = mx+35
+    	sy = my+55
+    	
+    	py.click(wx/2, hx/2+60)
+    	py.keyDown('ctrl')
+    	time.sleep(1)
+    	py.dragTo(sx, sy, delay, button='left')
+    	py.keyUp('ctrl')
     	time.sleep(delay)
 
 def makerune(handx, handy):
@@ -164,6 +179,7 @@ def check_roh():
 # Main loop
 print("Your script is running...\n")
 
+# ------ Make Runes ------
 try:
     while True:
         if checkmana():
@@ -189,3 +205,22 @@ try:
 
 except KeyboardInterrupt:
     print('Interrupted, exiting.')
+
+
+# ------ Only Eat ------
+# while True:
+#     print("Eating now..\n")
+#     eatfood()
+#     time.sleep(60*10)
+
+
+# ------ Train Distance ------
+# while True:
+#     pickup_spear()
+#     if checkmana():
+#         py.write("incuro", interval=0.01)
+#         time.sleep(delay)
+#         py.press('enter')
+#         time.sleep(delay)
+#         eatfood()
+#     time.sleep(15)
